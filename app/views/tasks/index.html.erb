@@ -1,5 +1,13 @@
-<ul>
-  <% @tasks.each do |task| %>
-    <li><%= task.title %></li>
-  <% end %>
-</ul>
+<div class = "container">
+  <div class= "card p-5 rounded bg-light text-center my-5">
+    <h1 class="display-1">My tasks</h1>
+  </div>
+  <div class= "card p-5 rounded bg-light my-5">
+    <ul>
+    <% @tasks.each do |task| %>
+    <li><%= link_to task.title, task_path(task)%></li>
+    <% end %>
+    </ul>
+    <button type="button" class="btn btn-outline-primary"><%= link_to  "New task", tasks_new_path%></button>
+  </div>
+</div>
